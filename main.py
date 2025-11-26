@@ -4,7 +4,7 @@ from random import randint, choice, uniform
 
 server = Server()
 # Можно указать IP-адрес нужного интерфейса
-server.set_endpoint("opc.tcp://192.168.102.182:4840/")
+server.set_endpoint("opc.tcp://0.0.0.0:4840/")
 server.set_server_name("Server")
 
 # Пространство имен
@@ -42,34 +42,231 @@ obj_dict = [{
                     },
 
                     {'AI_PressSlurry':[
-                                    ['Raw', 'int16'],
-                                    ['EU_Raw_Min', 'float'],
-                                    ['EU_Raw_Max', 'float'],
-                                    ['HH_En', 'bool'],
-                                    ['H_En', 'bool'],
-                                    ['L_En', 'bool'],
-                                    ['LL_En', 'bool'],
-                                    ['CH_OFF', 'bool'],
-                                    ['EU_SUBST', 'float'],
-                                    ['HH_Limit', 'float'],
-                                    ['H_Limit', 'float'],
-                                    ['L_Limit', 'float'],
-                                    ['LL_Limit', 'float'],
-                                    ['Hyst', 'float'],
-                                    {'HMI.Status': [
-                                        ['PV', 'float'],
-                                        ['Status', 'int16'],
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
                                         ]
-                                     }
-                                    ]
-                    }]
+                    },
+
+                    {'AI_FlowWiring':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    },
+
+                    {'AI_PressWiring':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    },
+
+                    {'AI_PressAir':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    },
+
+                    {'AI_LevelL2_1':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    },
+
+                    {'AI_Level_T1':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    },
+
+                    {'AI_Level_T3':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    },
+
+                    {'AI_PressPlate':[
+                                        ['Raw', 'int16'],
+                                        ['EU_Raw_Min', 'float'],
+                                        ['EU_Raw_Max', 'float'],
+                                        ['HH_En', 'bool'],
+                                        ['H_En', 'bool'],
+                                        ['L_En', 'bool'],
+                                        ['LL_En', 'bool'],
+                                        ['CH_OFF', 'bool'],
+                                        ['EU_SUBST', 'float'],
+                                        ['HH_Limit', 'float'],
+                                        ['H_Limit', 'float'],
+                                        ['L_Limit', 'float'],
+                                        ['LL_Limit', 'float'],
+                                        ['Hyst', 'float'],
+                                        {'HMI.Status': [
+                                            ['PV', 'float'],
+                                            ['SF', 'bool'],
+                                            ['HH_En', 'bool'],
+                                            ['H_En', 'bool'],
+                                            ['L_En', 'bool'],
+                                            ['LL_En', 'bool'],
+                                            ]
+                                        }
+                                        ]
+                    }
+    ],
+'Input_Vlv_DB': [{'dbValve_V4':[
+                                    ['Cmd', 'int16'],
+                                    ['Status_Code', 'int16'],
+                                    ['Fault_Code', 'int16'],
+                                    ['Enable_Code', 'int16']
+                    ]
+                    }
+
+    ]
 }]
-
-
-#
-#     'MySecondObject': [['Discret_4', 'int16'], ['Discret_5', 'uint16'], ['Discret_6', 'bool']],
-#     'MyThirdObject': [['Discret_7', 'int16'], ['Discret_8', 'uint16'], ['Discret_9', 'string']],
-# }
 
 
 def get_ua_type(type: str):
